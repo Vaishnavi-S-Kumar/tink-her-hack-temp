@@ -125,4 +125,7 @@ def add_event():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # When deploying (e.g. on Render) the service provides the port via
+    # the PORT environment variable and requires binding to 0.0.0.0.
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port, debug=True)
