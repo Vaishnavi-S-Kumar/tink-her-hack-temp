@@ -9,20 +9,23 @@
 ### Team Name: [Name]
 
 ### Team Members
-- Member 1: [Name] - [College]
-- Member 2: [Name] - [College]
+- Member 1: [Nandana S] - [TKMCE College]
+- Member 2: [Vaishnavi S Kumar] - [TKMCE College]
 
 ### Hosted Project Link
 [mention your project hosted link here]
 
 ### Project Description
-[2-3 lines about what your project does]
+[Catch The Date is a web-based college calendar built using Flask and JavaScript. It allows admins to add events and users to view them date-wise on an interactive calendar.
+]
 
 ### The Problem statement
-[What problem are you solving?]
+[Here is a clear and simple problem statement:
+Colleges often lack a centralized digital system to manage and display academic and extracurricular events efficiently. Important event details are scattered across notices and messages, making it difficult for students to track them. This project aims to develop a web-based calendar system that allows administrators to manage events and enables students to view them date-wise in an organized manner.
+]
 
 ### The Solution
-[How are you solving it?]
+[We developed Catch The Date, a web-based college calendar system that centralizes all academic and event information in one platform. Administrators can securely add events through an admin panel, and students can view events date-wise on an interactive calendar interface.]
 
 ---
 
@@ -31,25 +34,25 @@
 ### Technologies/Components Used
 
 **For Software:**
-- Languages used: [e.g., JavaScript, Python, Java]
-- Frameworks used: [e.g., React, Django, Spring Boot]
-- Libraries used: [e.g., axios, pandas, JUnit]
-- Tools used: [e.g., VS Code, Git, Docker]
+- Languages used: [Python, JavaScript, HTML, CSS]
+- Frameworks used: [Flask]
+- Libraries used: [JSON (built-in), Fetch API]
+- Tools used: [VS Code, Git, Web Browser, Flask Development Server]
 
 **For Hardware:**
-- Main components: [List main components]
-- Specifications: [Technical specifications]
-- Tools required: [List tools needed]
+- Main components: [Computer/Laptop]
+- Specifications: [Minimum 4GB RAM, Web Browser (Chrome/Edge/Firefox)]
+- Tools required: [Internet connection (for development & testing)]
 
 ---
 
 ## Features
 
 List the key features of your project:
-- Feature 1: [Description]
-- Feature 2: [Description]
-- Feature 3: [Description]
-- Feature 4: [Description]
+- Feature 1: [Admin Event Management: Admin can add events with date, title, and link.]
+- Feature 2: [Interactive Calendar View: Users can navigate month and year dynamically.]
+- Feature 3: [Date-wise Event Display: Events are displayed when a specific date is clicked.]
+- Feature 4: [JSON Data Storage: Events are stored and retrieved dynamically from a JSON file]
 
 ---
 
@@ -59,21 +62,23 @@ List the key features of your project:
 
 #### Installation
 ```bash
-[Installation commands - e.g., npm install, pip install -r requirements.txt]
+[pip install flask]
 ```
 
 #### Run
 ```bash
-[Run commands - e.g., npm start, python app.py]
+[python app.py]
 ```
 
 ### For Hardware:
 
 #### Components Required
-[List all components needed with specifications]
+[Laptop/PC
+Web Browser
+Python Installed]
 
 #### Circuit Setup
-[Explain how to set up the circuit]
+[Not applicable — this is a software-based web application.]
 
 ---
 
@@ -83,25 +88,33 @@ List the key features of your project:
 
 #### Screenshots (Add at least 3)
 
-![Screenshot1](Add screenshot 1 here with proper name)
+![<img width="1889" height="896" alt="Landing page" src="https://github.com/user-attachments/assets/bb2dfbfd-b5eb-4527-84bc-be57b6eaf937" />
+
+](Landing page)
 *Add caption explaining what this shows*
 
-![Screenshot2](Add screenshot 2 here with proper name)
+![<img width="1875" height="904" alt="user view" src="https://github.com/user-attachments/assets/fa656a59-0299-410b-bcdb-3bff50e9d99a" />
+
+](user view)
 *Add caption explaining what this shows*
 
-![Screenshot3](Add screenshot 3 here with proper name)
+![<img width="1881" height="874" alt="sign up page" src="https://github.com/user-attachments/assets/00871122-2734-405a-bdac-1eaafac73bc7" />
+
+](sign up page)
 *Add caption explaining what this shows*
 
 #### Diagrams
 
 **System Architecture:**
 
-![Architecture Diagram](docs/architecture.png)
+![<img width="436" height="325" alt="architecture diagram" src="https://github.com/user-attachments/assets/d5392a95-3300-481a-92b7-8a39f5248066" />
+](docs/architecture.png)
 *Explain your system architecture - components, data flow, tech stack interaction*
 
 **Application Workflow:**
 
-![Workflow](docs/workflow.png)
+<img width="445" height="288" alt="workflow diagram" src="https://github.com/user-attachments/assets/f155223a-14f5-4536-98ab-86881838ef83" />
+docs/workflow.png)
 *Add caption explaining your workflow*
 
 ---
@@ -361,9 +374,9 @@ python script.py -v --format json data.json
 ## Project Demo
 
 ### Video
-[Add your demo video link here - YouTube, Google Drive, etc.]
+[[Add your demo video link here - YouTube, Google Drive, etc.](https://drive.google.com/file/d/1GPpylvBbqMNTRzAdKUzQgZxXpSDRJYkC/view?usp=drive_link)]
 
-*Explain what the video demonstrates - key features, user flow, technical highlights*
+*this video explains how the website works, how to create and delete events,how to give links related to events*
 
 ### Additional Demos
 [Add any extra demo materials/links - Live site, APK download, online demo, etc.]
