@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Sign Up - Catch The Date</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <style>
+        .password-hint {
+            font-size: 16px;
+            color: #7d6b56;
+            margin-top: 5px;
+            text-align: left;
+            padding-left: 15px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Decorative doodles -->
+<div class="doodle-decoration-left">✎ ✐ ✑</div>
+<div class="doodle-decoration">✎ ✐ ✑</div>
+
+<div class="doodle-title" style="font-size: 70px; margin-top: 30px;">
+    Join Us!
+</div>
+
+<div class="login-box" style="width: 450px;">
+    <h3>✎ create account</h3>
+
+    {% if error %}
+        <p style="color:#ff6b6b; font-size: 20px; margin-bottom: 15px;">{{ error }}</p>
+    {% endif %}
+
+    <form method="POST">
+        <input type="text" name="username" placeholder="👤 username" required><br><br>
+        <input type="email" name="email" placeholder="📧 email" required><br><br>
+        <input type="password" name="password" placeholder="🔒 password" required><br><br>
+        <div class="password-hint">✎ min. 6 characters</div>
+        
+        <button type="submit" class="doodle-btn" style="font-size: 24px; padding: 10px; width: 100%;">Sign Up</button>
+    </form>
+    
+    <div style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center;">
+        <a href="/" class="back-btn" style="font-size: 18px; padding: 8px 20px;">← home</a>
+        <span style="font-size: 18px;">or <a href="/login" style="color: #ff9f7c; text-decoration: none; font-weight: bold;">login</a></span>
+    </div>
+</div>
+
+</body>
+</html>
+
+
+

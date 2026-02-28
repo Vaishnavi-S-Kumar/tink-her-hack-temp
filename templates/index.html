@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Catch The Date</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body class="user-bg">
+
+    <!-- Replace the commented title bar with this -->
+<div class="doodle-title" style="font-size: 70px; margin: 20px 0;">
+    Catch The Date
+</div>
+<div class="doodle-sub" style="text-align:center; margin-top:-20px;">
+    ✦ calendar ✦
+</div>
+
+    <div class="calendar-container">
+
+        <!-- Header -->
+        <div class="calendar-header">
+            <button id="prevMonth" class="nav-btn">&#10094;</button>
+
+            <div class="month-year">
+                <span id="monthDisplay"></span>
+                <select id="yearSelect" class="year-dropdown"></select>
+            </div>
+
+            <button id="nextMonth" class="nav-btn">&#10095;</button>
+        </div>
+
+        <!-- Weekdays -->
+        <div class="calendar" id="calendar">
+            <div class="day-name">Sun</div>
+            <div class="day-name">Mon</div>
+            <div class="day-name">Tue</div>
+            <div class="day-name">Wed</div>
+            <div class="day-name">Thu</div>
+            <div class="day-name">Fri</div>
+            <div class="day-name">Satur</div>
+        </div>
+
+    </div>
+
+    <div class="event-details" id="eventDetails">
+        <h3>Event Details</h3>
+        <ul id="eventList"></ul>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>

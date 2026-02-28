@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Panel - Catch The Date</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<!-- Decorative doodles -->
+<div class="doodle-decoration-left">✎ ✐ ✑</div>
+<div class="doodle-decoration">✎ ✐ ✑</div>
+
+<div class="doodle-title" style="font-size: 70px; margin: 20px 0;">
+    Admin Panel
+</div>
+
+<div class="admin-container">
+    
+    <div class="admin-section">
+        <h3>✎ Add New Event</h3>
+        <input type="date" id="eventDate" style="width:100%; padding:12px; border-radius:30px; border:3px solid #4a4a4a; font-family:'Patrick Hand', cursive; font-size:18px;"><br><br>
+        <input type="text" id="eventName" placeholder="Event Name" style="width:100%; padding:12px; border-radius:30px; border:3px solid #4a4a4a; font-family:'Patrick Hand', cursive; font-size:18px;"><br><br>
+        <input type="text" id="eventLink" placeholder="Event Link (URL)" style="width:100%; padding:12px; border-radius:30px; border:3px solid #4a4a4a; font-family:'Patrick Hand', cursive; font-size:18px;"><br><br>
+
+        <button class="doodle-btn" onclick="addEvent()" style="font-size:24px; width:100%;">+ Add Event</button>
+    </div>
+
+    <div class="admin-section">
+        <h3>✂ Delete Event</h3>
+        <input type="date" id="deleteDate" style="width:100%; padding:12px; border-radius:30px; border:3px solid #4a4a4a; font-family:'Patrick Hand', cursive; font-size:18px;"><br><br>
+
+        <button class="doodle-btn" onclick="loadEventsForDelete()" style="font-size:20px; width:100%;">📋 Load Events</button>
+
+        <ul id="deleteList" style="margin-top:20px;"></ul>
+    </div>
+
+    <div style="text-align:center; margin-top:30px;">
+        <a href="/logout" class="back-btn">🚪 Logout</a>
+    </div>
+</div>
+
+<script>
+function addEvent() {
+    const date = document.getElementById("eventDate").value;
+    const name = document.getElementById("eventName").value;
+    const link = document.getElementById("eventLink").value;
+
+    if (!date || !name) {
+        alert("Please fill in date and event name!");
+        return;
+    }
+
+    fetch("/add-event", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({ date, name, link })
+    })
+    .then(res => res.json())
+    .then(data => {
+        alert("✓ Event Added Successfully!");
+        document.getElementById("eventDate").value = "";
+        document.getElementById("eventName").value = "";
+        document.getElementById("eventLink").value = "";
+    });
+}
+
+function loadEventsForDelete() {
+    const date = document.getElementById("deleteDate").value;
+    
+    if (!date) {
+        alert("Please select a date!");
+        return;
+    }
+
+    fetch("/get-events")
+    .then(res => res.json())
+    .then(events => {
+        const list = document.getElementById("deleteList");
+        list.innerHTML = "";
+
+        if (events[date] && events[date].length > 0) {
+            events[date].forEach((event, index) => {
+                const li = document.createElement("li");
+                li.innerHTML = `
+                    <strong style="font-size:18px;">${event.name}</strong>
+                    <button onclick="deleteEvent('${date}', ${index})" style="background:#ffb5b5; border:2px solid #ff6b6b; padding:8px 15px; border-radius:25px; cursor:pointer; font-family:'Patrick Hand', cursive;">✗ Delete</button>
+                `;
+                list.appendChild(li);
+            });
+        } else {
+            list.innerHTML = "<p style='text-align:center; font-size:18px; color:#7d6b56;'>✎ No events found on this date</p>";
+        }
+    });
+}
+
+function deleteEvent(date, index) {
+    if (confirm("Delete this event?")) {
+        fetch("/delete-event", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json"
+            },
+            body: JSON.stringify({ date, index })
+        })
+        .then(res => res.json())
+        .then(data => {
+            alert("✓ Event Deleted Successfully!");
+            loadEventsForDelete();
+        });
+    }
+}
+</script>
+
+</body>
+</html>
